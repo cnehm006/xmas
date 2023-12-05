@@ -1,3 +1,15 @@
+document.getElementById('submit-button').addEventListener('click', function () {
+    var name = document.getElementById('name-input').value;
+    var greetingElement = document.getElementById('greeting');
+    if (name) {
+        greetingElement.textContent = 'Merry Christmas, ' + name + '!';
+        greetingElement.style.display = 'block';
+        document.getElementById('name-form').style.display = 'none';
+    } else {
+        alert('Please enter your name.');
+    }
+});
+
 document.body.addEventListener('mousemove', function (e) {
     var spark = document.createElement('div');
     spark.style.position = 'absolute';
