@@ -1,8 +1,13 @@
 document.getElementById('submit-button').addEventListener('click', function () {
-    var name = document.getElementById('name-input').value;
+    var name = document.getElementById('name-input').value.trim();
     var greetingElement = document.getElementById('greeting');
+    
     if (name) {
-        greetingElement.textContent = 'Merry Christmas, ' + name + '!';
+        if (name.toLowerCase() === 'amy') {
+            greetingElement.textContent = "Merry Christmas, Am2oum! ;)";
+        } else {
+            greetingElement.textContent = 'Merry Christmas, ' + name + '!';
+        }
         greetingElement.style.display = 'block';
         document.getElementById('name-form').style.display = 'none';
     } else {
