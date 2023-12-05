@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="snow-container"></div> <!-- Container for the snowflakes -->
+
     <div id="name-form">
         <input type="text" id="name-input" placeholder="Enter your name">
         <button id="submit-button">Submit</button>
     </div>
+    
     <div class="greeting" id="greeting" style="display: none;">Merry Christmas!</div>
+
+    <img src="jumpscare/scary-grinch.png" id="grinch-image" style="display: none; position: fixed; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000;">
+    <audio id="grinch-sound" src="jumpscare/scream.mp3"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
