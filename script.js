@@ -1,4 +1,3 @@
-// Snowflake creation function
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
@@ -17,19 +16,28 @@ function createSnowflake() {
 
 setInterval(createSnowflake, 200);
 
-// Personalized greeting functionality
 document.getElementById('submit-button').addEventListener('click', function () {
     var name = document.getElementById('name-input').value.trim();
     var greetingElement = document.getElementById('greeting');
     var grinchImage = document.getElementById('grinch-image');
     var grinchSound = document.getElementById('grinch-sound');
+    var thumpSound = document.getElementById('thump-sound');
     
     if (name.toLowerCase() === 'melanie') {
-        grinchImage.style.display = 'block';
         grinchSound.play();
+        grinchImage.style.display = 'block';
         setTimeout(function() {
             grinchImage.style.display = 'none';
-        }, 4000); // Display the Grinch image for 4 seconds
+        }, 3000); 
+    } else if (name.toLowerCase() === 'lourdes') {
+        greetingElement.textContent = 'Merry Christmas, Lourdes!';
+        greetingElement.style.display = 'block';
+        greetingElement.style.animation = 'sink 5s forwards';
+        greetingElement.style.animationTimingFunction = 'cubic-bezier(0.6, 0.05, 0.1, 1)'; // Custom timing function for acceleration
+        document.getElementById('name-form').style.display = 'none';
+        setTimeout(function() {
+            thumpSound.play();
+        }, 4000);
     } else {
         if (name) {
             greetingElement.textContent = 'Merry Christmas, ' + name + '!';

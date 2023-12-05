@@ -1,10 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #c2c2c2;
+    background-color: #f2f2f2; /* Change or add a background image if desired */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-#snow-container {
+#snow-container     {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,23 +32,12 @@ body {
     100% { transform: translateY(100vh); }
 }
 
-/* ... existing styles for body, snow-container, and snowflake ... */
-
-.greeting {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for exact centering */
-    font-size: 3em;
-    color: green;
-    text-align: center;
-    z-index: 1001; /* Make sure it's above the snowflakes */
-    animation: pop 1s ease infinite;
+@keyframes sink {
+    to { transform: translateY(48vh); }
 }
 
-@keyframes pop {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+.greeting {
+    position: absolute;
+    color: green;
+    font-size: 2em;
 }
