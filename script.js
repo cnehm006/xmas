@@ -33,11 +33,11 @@ document.getElementById('submit-button').addEventListener('click', function () {
         greetingElement.textContent = 'Merry Christmas, Lourdes!';
         greetingElement.style.display = 'block';
         greetingElement.style.animation = 'sink 5s forwards';
-        greetingElement.style.animationTimingFunction = 'cubic-bezier(0.6, 0.05, 0.1, 1)'; // Custom timing function for acceleration
+        greetingElement.style.animationTimingFunction = 'cubic-bezier(0.6, 0.05, 0.1, 1)';
         document.getElementById('name-form').style.display = 'none';
         setTimeout(function() {
             thumpSound.play();
-        }, 4000);
+        }, 4100);
     } else {
         if (name) {
             greetingElement.textContent = 'Merry Christmas, ' + name + '!';
@@ -48,3 +48,25 @@ document.getElementById('submit-button').addEventListener('click', function () {
         }
     }
 });
+
+function updateCountdown() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const christmas = new Date(`December 25, ${currentYear} 00:00:00`);
+
+    // If it's already Christmas
+    if (now > christmas) {
+        christmas.setFullYear(currentYear + 1);
+    }
+
+    const diff = christmas - now;
+
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((diff / 1000 / 60) % 60);
+    let seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('christmas-countdown').innerText = `Christmas in: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+}
+
+setInterval(updateCountdown, 1000);

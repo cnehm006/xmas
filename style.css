@@ -41,3 +41,13 @@ body {
     color: green;
     font-size: 2em;
 }
+
+.countdown {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: green;
+    z-index: 2000; /* Ensures it's visible above other elements */
+}
