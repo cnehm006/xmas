@@ -44,7 +44,7 @@ document.getElementById('submit-button').addEventListener('click', function () {
         setTimeout(function() {
             window.location.href = 'birthday/birthday.html';
         }, 1000); // Adjust timing to match the CSS transition
-    } else if (name === 'amy') {
+    } else if (name === 'amoum') {
         // Code for the special effect
         greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '... :)';
         greetingElement.style.display = 'block';
