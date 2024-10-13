@@ -46,11 +46,10 @@ document.getElementById('submit-button').addEventListener('click', function () {
         }, 1000); // Adjust timing to match the CSS transition
     } else if (name === 'amy') {
         // Code for the special effect
-        greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '!';
+        greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '... :)';
         greetingElement.style.display = 'block';
         greetingElement.classList.add('pulse-animation');
         document.getElementById('name-form').style.display = 'none';
-
 
     } else {
         if (name) {
