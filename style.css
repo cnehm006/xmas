@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2; /* Change or add a background image if desired */
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,18 +42,16 @@ body {
     font-size: 2em;
 }
 
-/* Ensure the countdown stays at the top */
 .countdown {
     position: absolute;
-    top: 10px; /* Adjust this for spacing from the top */
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 20px;
     color: green;
-    z-index: 2000; /* Ensures it's visible above other elements */
+    z-index: 2000;
 }
 
-/* Pulse Animation */
 @keyframes pulseEffect {
     0%, 100% {
         transform: scale(1);
@@ -70,7 +68,6 @@ body {
     animation: pulseEffect 0.5s infinite;
 }
 
-/* Color Fade Animation */
 @keyframes colorFade {
     0% {
         color: #ff66b2;
@@ -87,17 +84,8 @@ body {
     animation: colorFade 4s infinite;
 }
 
-/* Combine both animations */
 .special-animation {
     animation: pulseEffect 2s infinite, colorFade 4s infinite;
-}
-
-/* Heart Emoji Animation */
-.emoji-animation {
-    display: inline-block;
-    margin-left: 10px;
-    opacity: 0;
-    animation: floatUp 2s forwards;
 }
 
 @keyframes floatUp {
