@@ -17,7 +17,8 @@ function createSnowflake() {
 setInterval(createSnowflake, 200);
 
 document.getElementById('submit-button').addEventListener('click', function () {
-    var name = document.getElementById('name-input').value.trim().toLowerCase();
+    var nameInput = document.getElementById('name-input');
+    var name = nameInput.value.trim().toLowerCase();
     var greetingElement = document.getElementById('greeting');
     var grinchImage = document.getElementById('grinch-image');
     var grinchSound = document.getElementById('grinch-sound');
@@ -39,12 +40,18 @@ document.getElementById('submit-button').addEventListener('click', function () {
             thumpSound.play();
         }, 4100);
     } else if (name === 'raphaelle' || name === 'raphaëlle') {
-        // Fade out the current page
         document.body.classList.add('fade-out');
         setTimeout(function() {
-            // Redirect to birthday.html after fade-out
             window.location.href = 'birthday/birthday.html';
         }, 1000); // Adjust timing to match the CSS transition
+    } else if (name === 'amy') {
+        // Code for the special effect
+        greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '!';
+        greetingElement.style.display = 'block';
+        greetingElement.classList.add('pulse-animation');
+        document.getElementById('name-form').style.display = 'none';
+
+
     } else {
         if (name) {
             greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '!';
