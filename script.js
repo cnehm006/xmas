@@ -1,7 +1,7 @@
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
-    const size = Math.random() * 5 + 2; // Random size between 2px and 7px
+    const size = Math.random() * 5 + 2;
     snowflake.style.width = size + 'px';
     snowflake.style.height = size + 'px';
     snowflake.style.left = Math.random() * 100 + 'vw';
@@ -11,25 +11,25 @@ function createSnowflake() {
 
     setTimeout(() => {
         snowflake.remove();
-    }, (Math.random() * 5 + 5) * 1000); // Random duration between 5s and 10s
+    }, (Math.random() * 5 + 5) * 1000);
 }
 
 setInterval(createSnowflake, 200);
 
 document.getElementById('submit-button').addEventListener('click', function () {
-    var name = document.getElementById('name-input').value.trim();
+    var name = document.getElementById('name-input').value.trim().toLowerCase();
     var greetingElement = document.getElementById('greeting');
     var grinchImage = document.getElementById('grinch-image');
     var grinchSound = document.getElementById('grinch-sound');
     var thumpSound = document.getElementById('thump-sound');
-    
-    if (name.toLowerCase() === 'melanie') {
+
+    if (name === 'melanie') {
         grinchSound.play();
         grinchImage.style.display = 'block';
         setTimeout(function() {
             grinchImage.style.display = 'none';
         }, 3000); 
-    } else if (name.toLowerCase() === 'lourdes') {
+    } else if (name === 'lourdes') {
         greetingElement.textContent = 'Merry Christmas, Lourdes!';
         greetingElement.style.display = 'block';
         greetingElement.style.animation = 'sink 5s forwards';
@@ -38,9 +38,16 @@ document.getElementById('submit-button').addEventListener('click', function () {
         setTimeout(function() {
             thumpSound.play();
         }, 4100);
+    } else if (name === 'raphaelle' || name === 'raphaëlle') {
+        // Fade out the current page
+        document.body.classList.add('fade-out');
+        setTimeout(function() {
+            // Redirect to birthday.html after fade-out
+            window.location.href = 'birthday/birthday.html';
+        }, 1000); // Adjust timing to match the CSS transition
     } else {
         if (name) {
-            greetingElement.textContent = 'Merry Christmas, ' + name + '!';
+            greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '!';
             greetingElement.style.display = 'block';
             document.getElementById('name-form').style.display = 'none';
         } else {
@@ -54,7 +61,6 @@ function updateCountdown() {
     const currentYear = now.getFullYear();
     const christmas = new Date(`December 25, ${currentYear} 00:00:00`);
 
-    // If it's already Christmas
     if (now > christmas) {
         christmas.setFullYear(currentYear + 1);
     }

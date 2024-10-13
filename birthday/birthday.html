@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Raphaëlle!</title>
+    <link rel="stylesheet" href="birthday.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="fade-in">
+    <div id="birthday-overlay">
+        <canvas id="confetti-canvas"></canvas>
+        <div id="background-balloons"></div>
+        <div id="birthday-message" class="animate__animated animate__fadeInDown">
+            <h1>HAPPY BIRTHDAY RAPH</h1>
+            <p>19 years of slaying woooo</p>
+        </div>
+        <audio id="birthday-song" src="happy-birthday.mp3" autoplay></audio>
+
+        <div id="game-container">
+            <canvas id="game-canvas" width="300" height="500"></canvas>
+        </div>
+
+        <div id="cake-container">
+            <img id="birthday-cake" src="cake/cake5.png" alt="Birthday Cake">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="birthday.js"></script>
+</body>
+</html>
