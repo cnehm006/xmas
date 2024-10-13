@@ -48,6 +48,14 @@ document.getElementById('submit-button').addEventListener('click', function () {
         greetingElement.textContent = 'Merry Christmas, ' + name.charAt(0).toUpperCase() + name.slice(1) + '... :)';
         greetingElement.style.display = 'block';
         greetingElement.classList.add('pulse-animation');
+        setTimeout(function() {
+            greetingElement.classList.add('am-effect');
+            setTimeout(function() {
+            greetingElement.classList.remove('am-effect');
+            greetingElement.classList.add('quick-green');
+            }, 5000);
+        }, 50);
+        
         document.getElementById('name-form').style.display = 'none';
 
     } else {
